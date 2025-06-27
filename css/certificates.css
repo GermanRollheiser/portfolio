@@ -47,7 +47,7 @@
 }
 
 /*PCs*/
-@media (min-width: 1255.56px) {
+@media (min-width: 1301px) {
     .certificates-padding {
         padding: 30px;
     }

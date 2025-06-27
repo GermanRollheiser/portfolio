@@ -16,7 +16,6 @@
     
     .profile-img {
         width: 80%;
-        border-radius: 100px;
         max-width: 250px;
     }
     
@@ -57,7 +56,7 @@
 }
 
 /*PCs*/
-@media (min-width: 1255.56px) {
+@media (min-width: 1301px) {
     .profile {
         max-width: 90%;
         margin: 0 auto;

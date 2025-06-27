@@ -92,7 +92,7 @@
     display: none;
 }
 
-@media (max-width: 1255.56px) {
+@media (max-width: 1300px) {
     .nombre {
         font-size: 15px;
     }

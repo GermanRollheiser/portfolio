@@ -1,0 +1,56 @@
+/*Celulares*/
+@media (min-width: 370px) {
+    .skills {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .skills-padding {
+        padding: 25px 25px 0px;
+    }
+    
+    .skills-title {
+        font-size: 25px;
+        text-align: center;
+        margin-top: 0;
+    }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 0px 70px;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .skills-skill {
+        margin: 0;
+    }
+    
+    .skills-img {
+        width: 100%;
+        max-width: 70px;
+        padding-bottom: 5px;
+    }
+}
+
+/*PCs*/
+@media (min-width: 1255.56px) {
+    .skills-padding {
+        padding: 70px;
+    }
+
+    .skills-title {
+        font-size: 35px;
+    }
+
+    .skills-grid {
+        gap: 20px 200px;
+    }
+    
+    .skills-img {
+        max-width: 100px;
+        margin-bottom: 15px;
+    }
+}

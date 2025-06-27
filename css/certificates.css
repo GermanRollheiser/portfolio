@@ -1,0 +1,63 @@
+/*Celulares*/
+@media (min-width: 370px) {
+    .certificates {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .certificates-padding {
+        padding: 10px 0 15px 0;
+    }
+    
+    .certificates-title {
+        font-size: 25px;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .certificates-body {
+        max-width: 547.8px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    .swiper {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 250px;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/*Tablets*/
+@media (min-width: 768px) {
+    .certificates-padding {
+        padding: 25px 0 15px 0;
+    }
+}
+
+/*PCs*/
+@media (min-width: 1255.56px) {
+    .certificates-padding {
+        padding: 30px;
+    }
+    
+    .certificates-title {
+        font-size: 35px;
+    }
+
+    .certificates-body {
+        max-width: 1200px;
+        padding: 0;
+    }
+}

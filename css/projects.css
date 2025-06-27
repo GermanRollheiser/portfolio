@@ -1,5 +1,5 @@
 /*Celulares*/
-@media (min-width: 370px) {
+@media (min-width: 360px) {
     .projects {
         display: flex;
         flex-direction: column;

@@ -45,7 +45,7 @@ section[id] {
     scroll-margin-top: 70px;
 }
 
-@media (min-width: 370px) {
+@media (min-width: 360px) {
     .invisible {
         display: none;
     }

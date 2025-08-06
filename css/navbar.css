@@ -1,3 +1,10 @@
+/* Variables CSS para consistencia */
+:root {
+    --language-toggle-size: 55px;
+    --language-toggle-size-mobile: 45px;
+    --transition-speed: 0.3s;
+}
+
 .header {
     position: fixed;
     background-color: var(--background-secondary-color);
@@ -17,10 +24,12 @@
     background-color: var(--background-secondary-color);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
     max-width: 90%;
     margin: 0 auto;
     transition: all 0.5s ease;
+    position: relative;
 }
 
 .nav.active {
@@ -31,12 +40,86 @@
 
 .nombre {
     line-height: 50px;
-    font-size: 25px;
+    font-size: clamp(18px, 3vw, 25px);
     font-weight: bold;
+    flex-shrink: 0;
 }
 
 .nombre:hover {
-    filter: drop-shadow(0 0 5px var( --background-primary-color));
+    filter: drop-shadow(0 0 5px var(--background-primary-color));
+}
+
+/* Contenedor para elementos del lado derecho */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    order: 3; /* Posicionar después del menú */
+}
+
+/* Toggle de idioma con banderas */
+.language-toggle {
+    position: relative;
+    width: var(--language-toggle-size);
+    height: var(--language-toggle-size);
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #f0f0f0;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    border-color: var(--hover-color);
+}
+
+.language-toggle:active {
+    transform: scale(1.05);
+}
+
+/* Banderas dentro del toggle */
+.flag-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flags {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.flag-img.spain {
+    opacity: 1;
+    z-index: 2;
+}
+
+.flag-img.uk {
+    opacity: 0;
+    z-index: 1;
+}
+
+.language-toggle.active .flag-img.spain {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(180deg) scale(0.8);
+}
+
+.language-toggle.active .flag-img.uk {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    z-index: 2;
 }
 
 .menu {
@@ -44,6 +127,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    order: 2; /* Posicionar antes del nav-controls */
 }
 
 .menu li {
@@ -51,12 +135,13 @@
 }
 
 .menu a {
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: bold;
     line-height: 50px;
     text-transform: uppercase;
     transition: all 0.5s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .menu a::after {
@@ -92,11 +177,91 @@
     display: none;
 }
 
+/* Responsive Design */
+
+/* Tablets grandes y laptops pequeñas */
 @media (max-width: 1300px) {
-    .nombre {
+    .nav {
+        max-width: 95%;
+    }
+    
+    .menu a {
+        font-size: 16px;
+    }
+    
+    .menu li {
+        padding: 0px 10px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .nav-controls {
+        gap: 10px;
+    }
+    
+    .menu li {
+        padding: 0px 8px;
+    }
+    
+    .menu a {
         font-size: 15px;
     }
+}
 
+/* Tablets pequeñas y móviles grandes */
+@media (max-width: 768px) {
+    :root {
+        --language-toggle-size: var(--language-toggle-size-mobile);
+    }
+    
+    .nav {
+        padding: 8px 10px;
+    }
+    
+    .nombre {
+        font-size: clamp(14px, 4vw, 18px);
+        line-height: 40px;
+        order: 1;
+    }
+    
+    .menu {
+        order: 2;
+    }
+    
+    .nav-controls {
+        order: 3;
+        gap: 10px;
+    }
+    
+    .language-toggle {
+        width: var(--language-toggle-size-mobile);
+        height: var(--language-toggle-size-mobile);
+        border-width: 2px;
+    }
+    
+    .menu a {
+        line-height: 40px;
+    }
+}
+
+/* Mobile - donde se activa el menú hamburguesa */
+@media (max-width: 1199px) {
+    .nav {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nombre {
+        order: 1;
+        flex-grow: 1;
+    }
+    
+    .nav-controls {
+        order: 2;
+        gap: 8px;
+    }
+    
     .menu {
         flex-direction: column;
         position: fixed;
@@ -110,6 +275,8 @@
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s;
+        z-index: 1000;
+        order: 3;
     }
     
     .menu li {
@@ -119,7 +286,7 @@
     
     .menu a {
         text-decoration: none;
-        font-size: 25px;
+        font-size: clamp(20px, 5vw, 25px);
         font-weight: bold;
         line-height: 70px;
         transition: all 0.5s ease;
@@ -138,10 +305,28 @@
 
     .open-menu,
     .close-menu {
-    display: block;
-    border: none;
-    background: none;
-    cursor: pointer;
+        display: block;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .open-menu:hover,
+    .close-menu:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .open-menu img {
+        width: 25px;
+        height: 25px;
+        transition: opacity 0.2s ease;
+    }
+    
+    .open-menu:hover img {
+        opacity: 0.7;
     }
 
     .close-menu {
@@ -150,7 +335,7 @@
     }
 
     .close-img {
-        width: 30px;
+        width: 25px;
         opacity: 1;
         transition: all 0.5s ease;
     }
@@ -169,4 +354,96 @@
     .close-menu:focus:not(:focus-visible) {
         outline: none;
     }
+    
+    /* Toggle de idioma en mobile */
+    .language-toggle {
+        width: 35px;
+        height: 35px;
+        border-width: 2px;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 400px) {
+    .nav {
+        padding: 6px 8px;
+        max-width: 98%;
+    }
+    
+    .nav-controls {
+        gap: 6px;
+    }
+    
+    .nombre {
+        font-size: clamp(12px, 4vw, 16px);
+        line-height: 35px;
+    }
+    
+    .language-toggle {
+        width: 32px;
+        height: 32px;
+        border-width: 2px;
+    }
+    
+    .open-menu img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .menu a {
+        line-height: 35px;
+    }
+}
+
+/* Landscape móvil */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        padding: 5px 0;
+    }
+    
+    .nav {
+        padding: 5px 10px;
+    }
+    
+    .nombre {
+        line-height: 30px;
+        font-size: 14px;
+    }
+    
+    .menu a {
+        line-height: 30px;
+        font-size: 14px;
+    }
+    
+    .language-toggle {
+        width: 30px;
+        height: 30px;
+        border-width: 2px;
+    }
+}
+
+/* Animación de carga */
+.language-toggle {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estados de focus para accesibilidad */
+.language-toggle:focus {
+    outline: 2px solid var(--hover-color);
+    outline-offset: 2px;
+}
+
+.language-toggle:focus:not(:focus-visible) {
+    outline: none;
 }

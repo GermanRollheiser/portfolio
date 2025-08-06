@@ -10,7 +10,7 @@
     }
     
     .certificates-title {
-        font-size: 25px;
+        font-size: clamp(24px, 6vw, 35px);
         text-align: center;
         margin-top: 0;
     }
@@ -42,14 +42,26 @@
 /*Tablets*/
 @media (min-width: 768px) {
     .certificates-padding {
-        padding: 25px 0 15px 0;
+        padding: 60px;
+    }
+
+    .certificates-title {
+    text-align: center;
+    margin: 0 0 clamp(30px, 6vw, 50px) 0;
+  }
+}
+
+/* ===== TABLETS GRANDES (1024px-1300px) ===== */
+@media (min-width: 1024px) and (max-width: 1300px) {
+    .certificates-padding {
+        padding: 40px;
     }
 }
 
 /*PCs*/
 @media (min-width: 1301px) {
     .certificates-padding {
-        padding: 30px;
+        padding: 50px;
     }
     
     .certificates-title {

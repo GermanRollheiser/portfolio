@@ -1,65 +1,151 @@
-/*Celulares*/
+/* Base styles - Mobile First (320px y superior) */
+.languages {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 2.5px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.languages-body {
+    background-color: var(--background-secondary-color);
+    border-radius: 12px;
+    padding: 20px 15px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wave {
+    visibility: hidden;
+    width: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    opacity: 0;
+}
+
+.wave_bottom {
+    transform: translateX(-50%);
+    left: 50%;
+    opacity: 0;
+}
+
+.languages-title {
+    font-size: clamp(24px, 6vw, 35px);
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.languages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    max-width: 100%;
+}
+
+.languages-language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    max-width: 90px;
+    transition: transform 0.2s ease;
+}
+
+.languages-language:hover {
+    transform: translateY(-2px);
+}
+
+.languages-img {
+    width: clamp(45px, 8vw, 55px);
+    height: clamp(45px, 8vw, 55px);
+    object-fit: contain;
+    margin-bottom: 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.languages-img:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.languages-name {
+    font-size: clamp(11px, 2.5vw, 12px);
+    font-weight: 500;
+    margin-top: 3px;
+    line-height: 1.2;
+}
+
+/* Pantallas pequeñas - 360px y superior */
 @media (min-width: 360px) {
     .languages {
-        display: flex;
-        flex-direction: column;
-        padding: 25px 25px 2.5px 25px;
+        padding: 25px 20px 2.5px 20px;
     }
     
     .languages-body {
-        background-color: var(--background-secondary-color);
+        padding: 25px 20px;
         border-radius: 14px;
-        padding: 25px 0px;
-        margin: 0;
-    }
-    
-    .wave {
-        visibility: hidden;
-        width: 0;
-        position: none;
-        transform: 0;
-        top: 0;
-    }
-    
-    .wave_bottom {
-        transform: 0;
-        top: 0;
-    }
-    
-    .languages-title {
-        font-size: 25px;
-        margin: 0px 25px 15px 25px;
-        text-align: center;
-    }
-    
-    .languages-language {
-        padding: 0px 10px;
-        max-width: 500px;
-    }
-    
-    .languages-img {
-        width: 100%;
-        max-width: 55px;
     }
     
     .languages-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+        gap: 15px;
+    }
+    
+    .languages-language {
+        max-width: 85px;
+        padding: 10px;
     }
 }
 
-/*Tablets*/
+/* Pantallas medianas pequeñas - 480px y superior */
+@media (min-width: 480px) {
+    .languages-list {
+        grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .languages-language {
+        max-width: 100px;
+        padding: 12px;
+    }
+}
+
+/* Tablets pequeñas - 600px y superior */
+@media (min-width: 600px) {
+    .languages-list {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        max-width: 700px;
+    }
+    
+    .languages-language {
+        max-width: 120px;
+        padding: 15px;
+    }
+}
+
+/* Tablets - 768px y superior */
 @media (min-width: 768px) {
     .languages {
         padding: 0;
+        position: relative;
     }
 
     .languages-body {
         border-radius: 0;
+        padding: 40px 30px;
     }
     
     .wave {
@@ -68,28 +154,145 @@
         position: relative;
         transform: scaleX(-1);
         top: 2px;
+        opacity: 1;
+        left: auto;
     }
     
     .wave_bottom {
         visibility: visible;
         transform: scaleY(-1);
         top: -2px;
+        opacity: 1;
+        left: auto;
+    }
+    
+    .languages-title {
+        font-size: clamp(28px, 4vw, 32px);
+        margin: 0 0 30px 0;
+    }
+
+    .languages-list {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        max-width: 800px;
+    }
+    
+    .languages-language {
+        max-width: 130px;
+        padding: 15px;
+    }
+    
+    .languages-img {
+        width: clamp(60px, 7vw, 70px);
+        height: clamp(60px, 7vw, 70px);
+    }
+
+    .languages-name {
+        font-size: clamp(13px, 1.5vw, 14px);
     }
 }
 
-/*PCs*/
+/* Tablets grandes - 1024px y superior */
+@media (min-width: 1024px) {
+    .languages-body {
+        border-radius: 0;
+        padding: 30px;
+    }
+    
+    .languages-list {
+        gap: 35px;
+        max-width: 900px;
+    }
+    
+    .languages-language {
+        max-width: 150px;
+        padding: 18px;
+    }
+    
+    .languages-img {
+        width: clamp(75px, 6vw, 85px);
+        height: clamp(75px, 6vw, 85px);
+    }
+}
+
+/* Pantallas grandes - 1301px y superior */
 @media (min-width: 1301px) {
+    .languages-body {
+        border-radius: 0;
+        padding: 20px;
+    }
+    
     .languages-title {
-        font-size: 35px;
-        margin: 0 0 20px 0;
+        font-size: clamp(32px, 3vw, 35px);
+        margin: 0 0 40px 0;
+    }
+
+    .languages-list {
+        gap: 40px;
+        max-width: 1000px;
     }
 
     .languages-language {
-        padding: 0px 25px;
+        max-width: 160px;
+        padding: 20px;
     }
 
     .languages-img {
-        width: 100%;
-        max-width: 100px;
+        width: clamp(85px, 5vw, 100px);
+        height: clamp(85px, 5vw, 100px);
+    }
+
+    .languages-name {
+        font-size: clamp(15px, 1.2vw, 16px);
+    }
+}
+
+/* Pantallas extra grandes - 1600px y superior */
+@media (min-width: 1600px) {
+    .languages-list {
+        max-width: 1200px;
+        gap: 50px;
+    }
+    
+    .languages-language {
+        max-width: 180px;
+        padding: 25px;
+    }
+}
+
+/* Para pantallas muy anchas - mantener proporciones */
+@media (min-width: 1920px) {
+    .languages-list {
+        max-width: 1400px;
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .languages {
+        padding: 15px 20px 2.5px 20px;
+    }
+    
+    .languages-body {
+        padding: 20px 25px;
+    }
+    
+    .languages-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .languages-list {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+    
+    .languages-img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .languages-name {
+        font-size: 11px;
     }
 }

@@ -1,260 +1,556 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/languages.css">
-    <link rel="stylesheet" href="css/skills.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/certificates.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/experiences.css" />
+    <link rel="stylesheet" href="css/languages.css" />
+    <link rel="stylesheet" href="css/skills.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/certificates.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <script defer src="js/navbar.js"></script>
     <script defer src="js/menu.js"></script>
     <script defer src="js/slider.js"></script>
+    <script defer src="js/language.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="invisible">
-        <h2>Atención</h2>
-        <p>360px. es el ancho mínimo necesario para una óptima visualización. Si está viendo este mensaje, por favor active la opción SITIO PARA COMPUTADORA desde los tres puntos que se encuentran en el margen superior derecho de su dispositivo. </p>
-        <p>Muchas gracias.</p>
+      <h2 data-translate="warning-title">Atención</h2>
+      <p data-translate="warning-text1">
+        360px. es el ancho mínimo necesario para una óptima visualización. Si
+        está viendo este mensaje, por favor active la opción SITIO PARA
+        COMPUTADORA desde los tres puntos que se encuentran en el margen
+        superior derecho de su dispositivo.
+      </p>
+      <p data-translate="warning-text2">Muchas gracias.</p>
     </div>
     <div class="container">
-        <header class="header">
-            <nav class="nav">
-                <a href="#" class="nombre"><div>GERMAN ROLLHEISER</div></a>
-                <button class="open-menu" aria-label="Abrir menú"><img src="imagenes/1024px-Hamburger_icon.svg-330598372.png" alt="Abrir menú" width="30px"></button>
-                    <ul class="menu">
-                        <button class="close-menu" aria-label="Cerrar menú"><img class="close-img" src="imagenes/svg-close-icon-23-1501632530.png" alt="Cerrar menú"></button>
-                        <li><a href="#profile" class="selected">SOBRE MI</a></li>
-                        <Li><a href="#languages">IDIOMAS</a></Li>
-                        <Li><a href="#skills">HABILIDADES TECNICAS</a></Li>
-                        <Li><a href="#projects">PROYECTOS</a></Li>
-                        <Li><a href="#certificates">CERTIFICACIONES</a></Li>
-                        <Li><a href="#contact">CONTACTO</a></Li>
-                    </ul>
-            </nav>
-        </header>
-        <div class="main">
-            <section id="profile" class="profile">
-                <div class="profile-padding">
-                    <div class="profile-img-section"><img class="profile-img" src="imagenes/profile-pic.png" alt="Perfil"></div>
-                    <div class="flag-img-section"><img class="flag-img" src="imagenes/argentine-1024-3902705843.png" alt="Argentino"></div>
-                    <div class="profile-info">
-                        <h2 class="profile-title">Sobre mí</h2>
-                        <p class="profile-details">
-                            Mi nombre es Germán Rollheiser. Soy estudiante avanzado de programación con conocimientos en tecnologías como C++, C#, Python, Java, JavaScript, .NET, SQL y diversos frameworks.
-                            Disfruto trabajando tanto en backend como en frontend. Actualmente me encuentro finalizando la tecnicatura en programación.
-                            Además cuento con varias certificaciones que me ayudaron a expandir mis horizontes como desarrollador.
-                        </p>
-                    </div>
+      <header class="header">
+        <nav class="nav">
+          <a href="#" class="nombre"><div>GERMÁN ROLLHEISER</div></a>
+          <ul class="menu">
+            <button class="close-menu" aria-label="Cerrar menú">
+              <img
+                class="close-img"
+                src="imagenes/svg-close-icon-23-1501632530.png"
+                alt="Cerrar menú"
+              />
+            </button>
+            <li><a href="#profile" class="selected" data-translate="sobre-mi">SOBRE MI</a></li>
+            <li><a href="#experiences" data-translate="experiencia">EXPERIENCIA</a></li>
+            <li><a href="#skills" data-translate="habilidades">HABILIDADES</a></li>
+            <li><a href="#projects" data-translate="proyectos">PROYECTOS</a></li>
+            <li><a href="#certificates" data-translate="certificaciones">CERTIFICACIONES</a></li>
+            <li><a href="#languages" data-translate="idiomas">IDIOMAS</a></li>
+            <li><a href="#contact" data-translate="contacto">CONTACTO</a></li>
+          </ul>
+          <div class="nav-controls">
+            <!-- El toggle de idioma se insertará aquí automáticamente -->
+            <button class="open-menu" aria-label="Abrir menú">
+              <img
+                src="imagenes/1024px-Hamburger_icon.svg-330598372.png"
+                alt="Abrir menú"
+                width="30px"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <div class="main">
+        <section id="profile" class="profile">
+          <div class="profile-padding">
+            <div class="profile-img-section">
+              <img
+                class="profile-img"
+                src="imagenes/profile-pic.png"
+                alt="Perfil"
+              />
+            </div>
+            <div class="flag-img-section">
+              <img
+                class="flag-img"
+                src="imagenes/argentine-1024-3902705843.png"
+                alt="Argentino"
+              />
+            </div>
+            <div class="profile-info">
+              <h2 class="profile-title" data-translate="sobre-mi-title">Sobre mí</h2>
+              <p class="profile-details" data-translate="profile-text">
+                Mi nombre es Germán Rollheiser. Soy estudiante avanzado de
+                programación con conocimientos en tecnologías como .Net, C#,
+                Java, HTML, CSS, JavaScript, Vite, React, TypeScript, Supabase,
+                SQL y diversos frameworks. Además, cuento con varias
+                certificaciones que me ayudaron a expandir mis horizontes como
+                desarrollador. Disfruto trabajando tanto en backend como en
+                frontend. Actualmente me encuentro trabajando para una empresa
+                extranjera y finalizando la tecnicatura en programación.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="experiences" class="experiences">
+          <img class="wave" src="imagenes/purple-wave-top.svg" alt="División" />
+          <div class="experiences-body">
+            <h2 class="experiences-title" data-translate="experiencia-title">Experiencia</h2>
+            <div class="experiences-grid">
+              <div class="empty"></div>
+              <div class="line"></div>
+              <div class="experience">
+                <div class="experience-date" data-translate="exp1-date">2025 - Actualidad</div>
+                <div class="experience-company" data-translate="exp1-company">
+                  My Global Crew (Estados Unidos)
                 </div>
-            </section>
-            <section id="languages" class="languages">
-                <img class="wave" src="imagenes/purple-wave-top.svg" alt="División">
-                <div class="languages-body">
-                    <h2 class="languages-title">Idiomas</h2>
-                    <ul class="languages-list">
-                        <li class="languages-language"><img class="languages-img" src="imagenes/spanish.png" alt="Español"></li>
-                        <li class="languages-language"><img class="languages-img" src="imagenes/english.png" alt="Inglés"></li>
-                        <li class="languages-language"><img class="languages-img" src="imagenes/italian.png" alt="Italiano"></li>
-                        <li class="languages-language"><img class="languages-img" src="imagenes/japanese.png" alt="Japonés"></li>
-                    </ul>
+                <div class="experience-position" data-translate="exp1-position">
+                  Desarrollador Backend Jr. (Up-smart - Alemania)
                 </div>
-                <img class="wave wave_bottom" src="imagenes/purple-wave-bottom.svg" alt="División">
-            </section>
-            <section id="skills" class="skills">
-                <div class="skills-padding">
-                    <h2 class="skills-title">Habilidades técnicas</h2>
-                        <div class="skills-grid">
-                            <div class="skills-skill">
-                                <div><img class="skills-img" src="imagenes/C++_Logo.png" alt="C++"></div>
-                                <div><img class="skills-img" src="imagenes/python-logo-452175197.png" alt="Python"></div>
-                                <div><img class="skills-img" src="imagenes/HTML5_logo.png" alt="HTML"></div>
-                                <div><img class="skills-img" src="imagenes/aws.png" alt="AWS"></div>
-                                <div><img class="skills-img" src="imagenes/aspnet.png" alt="ASP .NET"></div>
-                                <div><img class="skills-img" src="imagenes/sqlserver.png" alt="SQL Server"></div>
-                            </div>
-                            <div class="skills-skill">
-                                <div><img class="skills-img" src="imagenes/csharp-icon-1755x2048-5r3ugs1f-727422393.png" alt="C#"></div>
-                                <div><img class="skills-img" src="imagenes/dotnet-3927577208.png" alt=".NET"></div>
-                                <div><img class="skills-img" src="imagenes/CSS3_logo.png" alt="CSS"></div>
-                                <div><img class="skills-img" src="imagenes/postman.png" alt="Postman"></div>
-                                <div><img class="skills-img" src="imagenes/react.png" alt="React"></div>
-                                <div><img class="skills-img" src="imagenes/mysql.png" alt="My SQL"></div>
-                            </div>
-                            <div class="skills-skill">
-                                <div><img class="skills-img" src="imagenes/Java-logo.png" alt="Java"></div>
-                                <div><img class="skills-img" src="imagenes/php-logo.png" alt="PHP"></div>
-                                <div><img class="skills-img" src="imagenes/js-logo-936197308.png" alt="JavaScript"></div>
-                                <div><img class="skills-img" src="imagenes/github.png" alt="Github"></div>
-                                <div><img class="skills-img" src="imagenes/nodejs.png" alt="Node js"></div>
-                                <div><img class="skills-img" src="imagenes/postgresql.png" alt="PostgreSQL"></div>
-                            </div>
-                        </div>
+                <div class="experience-description" data-translate="exp1-description">
+                  Desarrollo y mantengo la capa de servidor de aplicaciones web
+                  utilizando Supabase como backend principal. Me encargo de
+                  modelar datos, exponer API's seguras y optimizar consultas
+                  para asegurar una experiencia ágil y confiable tanto para
+                  usuarios finales como para equipos de frontend.
                 </div>
-            </section>
-            <section id="projects" class="projects">
-                <img class="wave" src="imagenes/purple-wave-top.svg" alt="División">
-                <div class="projects-body">
-                    <h2 class="projects-title">Proyectos</h2>
-                    <div class="cards">
-                        <div class="card">
-                            <img src="imagenes/gestor.jpeg" alt="Gestor de productos">
-                            <div class="card-body">
-                                <a href="https://github.com/GermanRollheiser/C-sharp-Nivel-2-TP-Integrador" target="_blank"><h4 class="cards-title">Gestor de productos</h4></a>
-                                <p>
-                                    Aplicación de escritorio realizada en C# que permite ingresar, modificar y eliminar productos,
-                                    junto a otras funcionalidades como la búsqueda de los mismos.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="imagenes/webarticulos.jpeg" alt="Mi web de artículos">
-                            <div class="card-body">
-                                <a href="http://miwebdearticulos.somee.com/" target="_blank"><h4 class="cards-title">Mi web de artículos</h4></a>
-                                <p>
-                                    Aplicación web realizada en C# y ASP.NET que permite mostrar el catálogo de artículos, filtrar la búsqueda, crear un usuario, agregar artículos a favoritos y administrar los artículos/usuarios.
-                                </p>
-                            </div>
-                        </div>
-                        <!--<div class="card">
-                            <img src="imagenes/pass-manager.png" alt="Meow Password Manager">
-                            <div class="card-body">
-                                <h4 class="cards-title">Meow Password Manager</h4>
-                                <p>
-                                    Aplicación de escritorio realizada en C# que permite administrar los datos de usuario y contraseña de cuantas cuentas disponga el usuario.
-                                </p>
-                            </div>
-                        </div>-->
-                        <div class="card">
-                            <img src="imagenes/web.jpeg" alt="Portfolio">
-                            <div class="card-body">
-                                <a href="#"><h4 class="cards-title">Portfolio</h4></a>
-                                <p>
-                                    Página web personal realizada con HTML, CSS y JavaScript destinada a mostrar mis conocimientos y formación como desarrollador.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="experience experience_left">
+                <div class="experience-date" data-translate="exp2-date">2024 - 2025</div>
+                <div class="experience-company" data-translate="exp2-company">Freelance (Argentina)</div>
+                <div class="experience-position" data-translate="exp2-position">Desarrollador .NET</div>
+                <div class="experience-description experience-description_left" data-translate="exp2-description">
+                  Desarrollo de aplicaciones .NET (ASP .NET y C#) y
+                  mantenimiento de bases de datos en SQL.
                 </div>
-                <img class="wave wave_bottom" src="imagenes/purple-wave-bottom.svg" alt="División">
-            </section>
-            <section id="certificates" class="certificates">
-                <div class="certificates-padding">
-                    <h2 class="certificates-title">Certificaciones</h2>
-                    <div class="certificates-body cont">
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp1.png" alt="C# Nivel 1">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp2.png" alt="C# Nivel 2">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp3.png" alt="C# Nivel 3">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/Base de datos.png" alt="Base de datos">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/aws1.png" alt="AWS">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp1.png" alt="C# Nivel 1">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp2.png" alt="C# Nivel 2">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp3.png" alt="C# Nivel 3">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/Base de datos.png" alt="Base de datos">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/aws1.png" alt="AWS">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp1.png" alt="C# Nivel 1">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp2.png" alt="C# Nivel 2">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/csharp3.png" alt="C# Nivel 3">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/Base de datos.png" alt="Base de datos">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="imagenes/aws1.png" alt="AWS">
-                                </div>
-                            </div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                    </div>
+              </div>
+              <div class="line"></div>
+              <div class="empty"></div>
+              <div class="empty"></div>
+              <div class="line"></div>
+              <div class="experience">
+                <div class="experience-date" data-translate="exp3-date">2023 - 2024</div>
+                <div class="experience-company" data-translate="exp3-company">
+                  Pactera Edge (Estados Unidos)
                 </div>
-            </section>
-            <section id="contact" class="contact">
-                <img class="individual-wave" src="imagenes/black-wave-top.svg" alt="División">
-                <div class="contact-padding">
-                    <div class="contact-body">
-                        <h2 class="contact-title">Contacto</h2>
-                        <div class="contact-details">
-                            <div class="contact-details-group">
-                                <p class="contact-label">Direccion:</p>
-                                <p class="contact-text">Buenos Aires, Argentina</p>
-                            </div>
-                            <div class="contact-details-group">
-                                <p class="contact-label">Email:</p>
-                                <p class="contact-text">germanrollheiser@gmail.com</p>
-                            </div>
-                            <div class="contact-details-group">
-                                <p class="contact-text">Deje su mensaje y le responderé a la brevedad</p>
-                            </div>
-                        </div>
-                        <form class="contact-form" action="https://formspree.io/f/xanjlgzg" method="post">
-                            <div class="contact-form-group">
-                                <label for="name">Nombre</label>
-                                <input required type="text" name="name" id="name">
-                            </div>
-                            <div class="contact-form-group">
-                                <label for="email">Email</label>
-                                <input required type="email" name="email" id="email">
-                            </div>
-                            <div class="contact-form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea required name="message" id="message" rows="6"></textarea>
-                            </div>
-                            <button type="submit" class="contact-form-submit">Enviar</button>
-                        </form>
-                        <nav class="social">
-                            <ul class="social-list">
-                                <!--<li class="social-item">
-                                    <a class="social-link" href="https://www.linkedin.com/in/germ%C3%A1n-rollheiser-805906374/" target="_blank"><img src="imagenes/linkedin.svg" alt="Linkedin"></a>
-                                </li>-->
-                                <li class="social-item">
-                                    <a class="social-link" href="https://github.com/GermanRollheiser" target="_blank"><img src="imagenes/github.svg" alt="Github"></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                <div class="experience-position" data-translate="exp3-position">Traductor</div>
+                <div class="experience-description" data-translate="exp3-description">
+                  Traducción de textos inglés-español para entrenar IA (Machine
+                  Translation Engine).
                 </div>
-            </section>
-        </div>
+              </div>
+              <div class="experience experience_left">
+                <div class="experience-date" data-translate="exp4-date">2021 - 2024</div>
+                <div class="experience-company" data-translate="exp4-company">
+                  Colegios del solar (Argentina)
+                </div>
+                <div class="experience-position" data-translate="exp4-position">Profesor de inglés</div>
+                <div class="experience-description experience-description_left" data-translate="exp4-description">
+                  Profesor de primaria, secundaria y tutorías.
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="empty"></div>
+            </div>
+          </div>
+          <img
+            class="wave wave_bottom"
+            src="imagenes/purple-wave-bottom.svg"
+            alt="División"
+          />
+        </section>
+        <section id="skills" class="skills">
+          <div class="skills-padding">
+            <h2 class="skills-title" data-translate="habilidades-title">Habilidades técnicas</h2>
+            <div class="skills-grid">
+              <!-- Fila 1 -->
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/aspnet.png"
+                  alt="ASP .NET"
+                />
+                <span class="skills-name">ASP .NET</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/csharp-icon-1755x2048-5r3ugs1f-727422393.png"
+                  alt="C#"
+                />
+                <span class="skills-name">C#</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/Java-logo.png"
+                  alt="Java"
+                />
+                <span class="skills-name">Java</span>
+              </div>
+
+              <!-- Fila 2 -->
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/supabase-300.png"
+                  alt="Supabase"
+                />
+                <span class="skills-name">Supabase</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/dotnet-3927577208.png"
+                  alt=".NET"
+                />
+                <span class="skills-name">.NET</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/vite-300.png"
+                  alt="Vite"
+                />
+                <span class="skills-name">Vite</span>
+              </div>
+
+              <!-- Fila 3 -->
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/HTML5_logo.png"
+                  alt="HTML"
+                />
+                <span class="skills-name">HTML5</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/CSS3_logo.png"
+                  alt="CSS"
+                />
+                <span class="skills-name">CSS3</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/js-logo-936197308.png"
+                  alt="JavaScript"
+                />
+                <span class="skills-name">JavaScript</span>
+              </div>
+
+              <!-- Fila 4 -->
+              <div class="skills-item">
+                <img class="skills-img" src="imagenes/aws.png" alt="AWS" />
+                <span class="skills-name">AWS</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/postman.png"
+                  alt="Postman"
+                />
+                <span class="skills-name">Postman</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/github.png"
+                  alt="GitHub"
+                />
+                <span class="skills-name">GitHub</span>
+              </div>
+
+              <!-- Fila 5 -->
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/ts.png"
+                  alt="TypeScript"
+                />
+                <span class="skills-name">TypeScript</span>
+              </div>
+              <div class="skills-item">
+                <img class="skills-img" src="imagenes/react.png" alt="React" />
+                <span class="skills-name">React</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/nodejs.png"
+                  alt="Node.js"
+                />
+                <span class="skills-name">Node.js</span>
+              </div>
+
+              <!-- Fila 6 -->
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/sqlserver.png"
+                  alt="SQL Server"
+                />
+                <span class="skills-name">SQL Server</span>
+              </div>
+              <div class="skills-item">
+                <img class="skills-img" src="imagenes/mysql.png" alt="MySQL" />
+                <span class="skills-name">MySQL</span>
+              </div>
+              <div class="skills-item">
+                <img
+                  class="skills-img"
+                  src="imagenes/postgresql.png"
+                  alt="PostgreSQL"
+                />
+                <span class="skills-name">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="projects" class="projects">
+          <img class="wave" src="imagenes/purple-wave-top.svg" alt="División" />
+          <div class="projects-body">
+            <h2 class="projects-title" data-translate="proyectos-title">Proyectos</h2>
+            <div class="cards">
+              <div class="card">
+                <img src="imagenes/form.png" alt="Webform" />
+                <div class="card-body">
+                  <a href="https://webform-ivory.vercel.app/" target="_blank"
+                    ><h4 class="cards-title" data-translate="project1-title">Grant Application</h4></a
+                  >
+                  <p data-translate="project1-description">
+                    Login y Webform realizada como parte de una entrevista
+                    técnica con Vite, React, TypeScript, Supabase y desplegada
+                    en Vercel. La app permite la carga de información y la
+                    subida de archivos utilizando UUID y RLS como medidas de
+                    seguridad.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="imagenes/webarticulos.jpeg"
+                  alt="Mi web de artículos"
+                />
+                <div class="card-body">
+                  <a href="http://miwebdearticulos.somee.com/" target="_blank"
+                    ><h4 class="cards-title" data-translate="project2-title">Mi web de artículos</h4></a
+                  >
+                  <p data-translate="project2-description">
+                    Aplicación web realizada en C# y ASP.NET que permite mostrar
+                    el catálogo de artículos, filtrar la búsqueda, crear un
+                    usuario, agregar artículos a favoritos y administrar los
+                    artículos/usuarios.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="imagenes/web.jpeg" alt="Portfolio" />
+                <div class="card-body">
+                  <a href="#"><h4 class="cards-title" data-translate="project3-title">Portfolio</h4></a>
+                  <p data-translate="project3-description">
+                    Página web personal realizada con HTML, CSS y JavaScript
+                    destinada a mostrar mis conocimientos y formación como
+                    desarrollador.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            class="wave wave_bottom"
+            src="imagenes/purple-wave-bottom.svg"
+            alt="División"
+          />
+        </section>
+        <section id="certificates" class="certificates">
+          <div class="certificates-padding">
+            <h2 class="certificates-title" data-translate="certificaciones-title">Certificaciones</h2>
+            <div class="certificates-body cont">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp1.png" alt="C# Nivel 1" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp2.png" alt="C# Nivel 2" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp3.png" alt="C# Nivel 3" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/Base de datos.png" alt="Base de datos" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/aws1.png" alt="AWS" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp1.png" alt="C# Nivel 1" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp2.png" alt="C# Nivel 2" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp3.png" alt="C# Nivel 3" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/Base de datos.png" alt="Base de datos" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/aws1.png" alt="AWS" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp1.png" alt="C# Nivel 1" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp2.png" alt="C# Nivel 2" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/csharp3.png" alt="C# Nivel 3" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/Base de datos.png" alt="Base de datos" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="imagenes/aws1.png" alt="AWS" />
+                  </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="languages" class="languages">
+          <img class="wave" src="imagenes/purple-wave-top.svg" alt="División" />
+          <div class="languages-body">
+            <h2 class="languages-title" data-translate="idiomas-title">Idiomas</h2>
+            <ul class="languages-list">
+              <li class="languages-language">
+                <img
+                  class="languages-img"
+                  src="imagenes/spanish.png"
+                  alt="Español"
+                />
+                <span class="languages-name" data-translate="lang-native">Nativo</span>
+              </li>
+              <li class="languages-language">
+                <img
+                  class="languages-img"
+                  src="imagenes/english.png"
+                  alt="Inglés"
+                />
+                <span class="languages-name" data-translate="lang-teacher">Profesor</span>
+              </li>
+              <li class="languages-language">
+                <img
+                  class="languages-img"
+                  src="imagenes/italian.png"
+                  alt="Italiano"
+                />
+                <span class="languages-name" data-translate="lang-b1">B1</span>
+              </li>
+              <li class="languages-language">
+                <img
+                  class="languages-img"
+                  src="imagenes/german.png"
+                  alt="Alemán"
+                />
+                <span class="languages-name" data-translate="lang-basic">Básico</span>
+              </li>
+              <li class="languages-language">
+                <img
+                  class="languages-img"
+                  src="imagenes/japanese.png"
+                  alt="Japonés"
+                />
+                <span class="languages-name" data-translate="lang-basic">Básico</span>
+              </li>
+            </ul>
+          </div>
+          <img
+            class="wave wave_bottom"
+            src="imagenes/purple-wave-bottom.svg"
+            alt="División"
+          />
+        </section>
+        <section id="contact" class="contact">
+          <div class="contact-padding">
+            <div class="contact-body">
+              <h2 class="contact-title" data-translate="contacto-title">Contacto</h2>
+              <div class="contact-details">
+                <div class="contact-details-group">
+                  <p class="contact-label" data-translate="contact-address-label">Direccion:</p>
+                  <p class="contact-text" data-translate="contact-address">Buenos Aires, Argentina</p>
+                </div>
+                <div class="contact-details-group">
+                  <p class="contact-label" data-translate="contact-email-label">Email:</p>
+                  <p class="contact-text" data-translate="contact-email">germanrollheiser@gmail.com</p>
+                </div>
+                <div class="contact-details-group">
+                  <p class="contact-text" data-translate="contact-message-text">
+                    Deje su mensaje y le responderé a la brevedad
+                  </p>
+                </div>
+              </div>
+              <form
+                class="contact-form"
+                action="https://formspree.io/f/xanjlgzg"
+                method="post"
+              >
+                <div class="contact-form-group">
+                  <label for="name" data-translate="contact-name-label">Nombre</label>
+                  <input required type="text" name="name" id="name" />
+                </div>
+                <div class="contact-form-group">
+                  <label for="email" data-translate="contact-email-input-label">Email</label>
+                  <input required type="email" name="email" id="email" />
+                </div>
+                <div class="contact-form-group">
+                  <label for="message" data-translate="contact-message-label">Mensaje</label>
+                  <textarea
+                    required
+                    name="message"
+                    id="message"
+                    rows="6"
+                  ></textarea>
+                </div>
+                <button type="submit" class="contact-form-submit" data-translate="contact-submit">
+                  Enviar
+                </button>
+              </form>
+              <nav class="social">
+                <ul class="social-list">
+                  <li class="social-item">
+                    <a
+                      class="social-link"
+                      href="https://github.com/GermanRollheiser"
+                      target="_blank"
+                      ><img src="imagenes/github.svg" alt="Github"
+                    /></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-</body>
+  </body>
 </html>

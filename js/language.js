@@ -12,7 +12,7 @@ const translations = {
         
         // Profile
         'sobre-mi-title': 'Sobre mí',
-        'profile-text': 'Mi nombre es Germán Rollheiser. Soy estudiante avanzado de programación con conocimientos en tecnologías como .Net, C#, ASP.NET, HTML, CSS, JavaScript, Node.js, Express.js, Vite, React, TypeScript, Supabase, SQL, MongoDB y diversos frameworks. Además, cuento con varias certificaciones que me ayudaron a expandir mis horizontes como desarrollador. Disfruto trabajando tanto en backend como en frontend. Actualmente me encuentro trabajando para una empresa extranjera y finalizando la tecnicatura en programación.',
+        'profile-text': 'Mi nombre es Germán Rollheiser. Soy estudiante avanzado de programación con conocimientos en tecnologías como .Net, C#, ASP.NET, HTML, CSS, JavaScript, Node.js, Express.js, Vite, React, TypeScript, Supabase, SQL, MongoDB y diversas librerías. Además, cuento con varias certificaciones que me ayudaron a expandir mis horizontes como desarrollador. Disfruto trabajando tanto en backend como en frontend. Actualmente me encuentro trabajando para una empresa extranjera y finalizando la tecnicatura en programación.',
         
         // Experience
         'experiencia-title': 'Experiencia',
@@ -85,7 +85,7 @@ const translations = {
         
         // Profile
         'sobre-mi-title': 'About me',
-        'profile-text': 'My name is Germán Rollheiser. I am an advanced programming student with knowledge in technologies such as .Net, C#, ASP.NET, HTML, CSS, JavaScript, Node.js, Express.js, Vite, React, TypeScript, Supabase, SQL, MongoDB, and various frameworks. In addition, I hold several certifications that have helped me broaden my horizons as a developer. I enjoy working on both backend and frontend. I am currently working for a foreign company and completing my associate degree in programming.',
+        'profile-text': 'My name is Germán Rollheiser. I am an advanced programming student with knowledge in technologies such as .Net, C#, ASP.NET, HTML, CSS, JavaScript, Node.js, Express.js, Vite, React, TypeScript, Supabase, SQL, MongoDB, and several libraries. In addition, I hold several certifications that have helped me broaden my horizons as a developer. I enjoy working on both backend and frontend. I am currently working for a foreign company and completing my associate degree in programming.',
         
         // Experience
         'experiencia-title': 'Experience',
